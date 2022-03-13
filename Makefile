@@ -1,5 +1,6 @@
 include Makefile.inc
-
+CONFIG_DEBUG_INFO=y	
+CONFIG_FRAME_POINTER=y
 ifeq ($(OS),Windows_NT)
 W=w
 else
@@ -48,7 +49,7 @@ ifeq ($(OS),Windows_NT)
 	-start $(GDB)
 else
 ifeq ($(shell uname -s),Linux)
-	-/usr/bin/x-terminal-emulator -e $(GDB)
+	-/usr/bin/x-terminal-emulator -e $(GDB) &
 endif
 ifeq ($(shell uname -s),Darwin)
 	-osascript -e 'on run argv' \

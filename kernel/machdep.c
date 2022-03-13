@@ -39,6 +39,17 @@
 /*计算机启动时，自1970-01-01 00:00:00 +0000 (UTC)以来的秒数*/
 time_t g_startup_time;
 
+time_t sys_time(time_t *loc)
+{
+    time_t seconds;
+    seconds = g_startup_time +g_timer_ticks/HZ;
+    if(*loc)
+    {
+        *loc = seconds;
+    }
+    return seconds;
+}
+
 /**
  * 初始化i8253定时器
  */
@@ -883,6 +894,16 @@ void syscall(struct context *ctx)
             struct timeval *tv = *( struct timeval **)(ctx->esp+4);
             struct timezone *tz = *( struct timezone **)(ctx->esp+8);
             ctx->eax = sys_gettimeofday(tv, tz);
+        }
+        break;
+    case SYSCALL_time:
+        {
+            time_t *loc = *(time_t**)(ctx->esp+4);
+            ctx->eax=sys_time(loc);
+            if(loc != NULL)
+            {
+                *loc = ctx->eax;
+            }
         }
         break;
     default:

@@ -20,6 +20,7 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
 void beep(int freq);
 int putchar(int c);
 int getchar();
+time_t time(time_t *loc);
 
 struct vm86_context {
   uint32_t  : 32;/*0*/

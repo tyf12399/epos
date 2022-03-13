@@ -40,5 +40,6 @@
 
 #define SYSCALL_putchar       1000
 #define SYSCALL_getchar       1001
+#define SYSCALL_time          2016
 
 #endif /*_SYSCALLNR_H*/

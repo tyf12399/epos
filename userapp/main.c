@@ -34,8 +34,9 @@ void main(void *pv)
             task_getid(), pv);
 
     //TODO: Your code goes here
-
-
+    time_t *sec;
+    time_t nowsec = time(&sec);
+    printf("%d seconds from 1970.1.1 00:00",nowsec);
     while(1)
         ;
     task_exit(0);

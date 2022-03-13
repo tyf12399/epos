@@ -201,4 +201,7 @@ struct timezone {
 int sys_gettimeofday(struct timeval *tv, struct timezone *tz);
 
 void     mi_startup();
+
+time_t sys_time(time_t *loc);
+
 #endif /*_KERNEL_H*/
