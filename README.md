@@ -6,9 +6,9 @@
 ## 环境配置方法
 ### Windows用户
 #### 使用教师提供的环境（推荐）
-下载教师统一提供的压缩包，解压后打开解压路径下的expenv文件夹，点击setvar.bat自动完成环境配置，请无视出现的cmd界面，只需确保执行完成即可。
-另，由于该bat对用户环境变量进行了修改，有需求或已安装部分软件的可自行删除对应语句。
-又另，不推荐使用提供的Notepad++，请使用其他编辑器进行代码编写及修改。
+下载教师统一提供的压缩包，解压后打开解压路径下的expenv文件夹，点击setvar.bat自动完成环境配置，请无视出现的cmd界面，只需确保执行完成即可。  
+另，由于该bat对用户环境变量进行了修改，有需求或已安装部分软件的可自行删除对应语句。  
+又另，不推荐使用提供的Notepad++，请使用其他编辑器进行代码编写及修改。  
 #### 使用本仓库并自行配置相关环境
 参照setvar.bat中的需求，自行安装MinGW，msys，QEMU，Git等（未测试）
 #### 使用虚拟机
@@ -26,8 +26,8 @@ git clone git@github.com:tyf12399/epos.git
 ```
 测试运行
 ### Mac OS用户
-（可选）安装Xcode的命令行工具 ”Command Line Tools for Xcode“
-安装[Homebrew](https://github.com/Homebrew/brew)
+（可选）安装Xcode的命令行工具 “Command Line Tools for Xcode”  
+安装[Homebrew](https://github.com/Homebrew/brew)  
 在命令行中执行以下指令
 ```
 brew tap hongmingjian/i586-elf-toolchain
@@ -44,9 +44,9 @@ git clone git@github.com:tyf12399/epos.git
 ```
 make run
 ```
-可能会要求输入密码，输入即可
-若出现qemu窗口，并输出内容结尾类似`task #1: I'm the first user task(pv=0x12345678)`即编译运行成功
-清除临时文件
+可能会要求输入密码，输入即可  
+若出现qemu窗口，并输出内容结尾类似`task #1: I'm the first user task(pv=0x12345678)`即编译运行成功  
+清除临时文件  
 ```
 make clean
 ```
